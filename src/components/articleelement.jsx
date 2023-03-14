@@ -2,10 +2,12 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { fetchArticle } from "../utils/utils"
 import Comments from "./comments"
+import { patchArticleVotes } from "../utils/utils"
 
 const ArticleElement =() => {
 
     const [article, setArticle] = useState([])
+    const [votes, setVotes] = useState(0)
 
 const {article_id} = useParams()
 
@@ -14,6 +16,12 @@ useEffect(() => {
         setArticle(articleReceived)
     })
 })
+
+const handleClick = () =>{
+    patchArticleVotes(article_id)
+        
+
+}
 
 return (
     <section>
@@ -26,6 +34,8 @@ return (
                             <h3>{info.title}</h3>
                             <img src={info.article_img_url} alt="Article image"></img>
                             <p>{info.body}</p>
+                            <p>Votes: {info.votes}</p>
+                            <button onClick={handleClick}>Vote</button>
                             <p>{info.author}</p>
                             <p>{info.created_at}</p>
                         </li>

@@ -10,7 +10,7 @@ useEffect (() => {
     fetchComments(article_id).then((commentsReceived) => {
         setComments(commentsReceived)
     })
-})
+}, [article_id])
 
 
 return (
@@ -24,9 +24,7 @@ return (
                             <h1>{comment.body}</h1>
                             <button>
                             <h1>{comment.votes}</h1>
-                            </button>
-
-                            
+                            </button> 
 
                         </li>
                     )
