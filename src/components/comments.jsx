@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchComments } from "../utils/utils";
+import AddComment from "./addcomment";
 
 
 const Comments = ({article_id}) => {
@@ -15,6 +16,7 @@ useEffect (() => {
 
 return (
     <section>
+        <AddComment />
         <h2>Comments</h2>
         <ul className="comments-list">
             {
