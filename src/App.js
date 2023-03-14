@@ -5,14 +5,12 @@ import ArticleList from "./components/articlelist"
 
 function App() {
 
-
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>This is my app!</h1>
-      </header>
+     <Header />
+     <ArticleList />
     </div>
-  );
+  )
 }
 
 export default App;
