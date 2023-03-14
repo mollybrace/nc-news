@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { fetchArticle } from "../utils/utils"
+import Comments from "./comments"
 
 const ArticleElement =() => {
 
@@ -13,7 +14,6 @@ useEffect(() => {
         setArticle(articleReceived)
     })
 })
-console.log(article)
 
 return (
     <section>
@@ -34,6 +34,10 @@ return (
                 })
             }
         </ul>
+        <section>
+        <Comments article_id={article_id}/>
+
+        </section>
     </section>
     )
 }
