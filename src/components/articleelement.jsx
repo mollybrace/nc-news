@@ -8,14 +8,17 @@ const ArticleElement =() => {
 
     const [article, setArticle] = useState([])
     const [votes, setVotes] = useState()
+    const [isLoading, setIsLoading] = useState(true)
     const [click, setClick] = useState(false)
 
 const {article_id} = useParams()
 
 useEffect(() => {
     fetchArticle(article_id).then((articleReceived) => {
+        setIsLoading(true);
         setArticle(articleReceived)
         setVotes(articleReceived[0].votes)
+        setIsLoading(false)
     })
 }, [article_id])
 
@@ -23,6 +26,7 @@ const handleClick = () =>{
     setVotes(votes + 1)
     patchArticleVotes(article_id)
 }
+if (isLoading) return <p>Loading...</p>
 
 return (
     <section>
