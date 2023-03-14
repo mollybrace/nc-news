@@ -6,7 +6,13 @@ const ncNews = axios.create({
 
 export const fetchArticles = () => {
   return ncNews.get("api/articles").then((articlesReceived) => {
-    console.log(articlesReceived, "AXIOS");
     return articlesReceived.data.articles;
   });
 };
+
+export const fetchArticle = (article_id) => {
+  return ncNews.get(`/api/articles/${article_id}`).then((articleReceived) => {
+    return articleReceived.data.article
+  })
+
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchArticles } from "../utils/utils";
+import { fetchArticle } from "../utils/utils";
 
 const ArticleList = ()=> {
 
@@ -30,7 +31,7 @@ const ArticleList = ()=> {
                 return (
                     <li key={article.article_id} className="article-element">
                         <h3>{article.title}</h3>
-                        <Link to="/articles/article_id">
+                        <Link to={`/articles/${article.article_id}`}>
                         <img width="500px" src={article.article_img_url} alt="Article image"></img>
                         </Link>
                     </li>
