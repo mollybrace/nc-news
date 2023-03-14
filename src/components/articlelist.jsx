@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchArticles } from "./utils/utils";
+import { fetchArticles } from "../utils/utils";
 
 const ArticleList = ()=> {
 

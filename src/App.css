@@ -1,5 +1,23 @@
 .App {
   text-align: center;
+  background-color: #1F363D;
+  color: #CFE0C3;
+
+}
+
+.article-element {
+  display: inline-block;
+  width: 500px;
+  height: 500px;
+  padding: 50px;
+}
+
+.article-list {
+  margin: 10pxgit;
+}
+
+/* .App {
+  text-align: center;
 }
 
 .App-logo {
@@ -35,4 +53,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
