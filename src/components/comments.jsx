@@ -5,14 +5,18 @@ import AddComment from "./addcomment";
 
 const Comments = ({article_id}) => {
 
+const [isLoading, setIsLoading] = useState(true)
 const [comments, setComments] = useState([])
     
 useEffect (() => {
     fetchComments(article_id).then((commentsReceived) => {
+        setIsLoading(true)
         setComments(commentsReceived)
+        setIsLoading(false)
     })
 }, [article_id])
 
+if (isLoading) return <p>Loading...</p>
 
 return (
     <section>
