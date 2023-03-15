@@ -13,6 +13,7 @@ const ArticleElement =() => {
     const [downvoteText, setDownvoteText] = useState("Downvote")
     const [disableUpvote, setDisableUpvote] = useState(false)
     const [disableDownvote, setDisableDownvote] = useState(false)
+    const [voteError, setVoteError] = useState(false)
 
 const {article_id} = useParams()
 
@@ -30,7 +31,9 @@ const handleClick = () => {
         setVotes(votes + 1)
         setUpvoteText("Voted!")
         setDisableUpvote(true)
-        patchArticleVotes(article_id, inc_votes).then((patchReceived) => {
+        patchArticleVotes(article_id, inc_votes).catch(() => {
+            setVotes(votes -1 )
+            setVoteError(true)
         })
         }
     

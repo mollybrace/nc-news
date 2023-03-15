@@ -29,6 +29,7 @@ export const patchArticleVotes = (article_id, inc_votes) => {
 
 export const postComment = (article_id, commentObject) => {
   return ncNews.post(`/api/articles/${article_id}/comments`, commentObject).then((commentPosted) => {
-    return commentPosted
+    console.log(commentPosted.data.comment, "commentpooooooost")
+    return commentPosted.data.comment
   })
 }

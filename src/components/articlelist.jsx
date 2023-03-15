@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchArticles } from "../utils/utils";
 import { fetchArticle } from "../utils/utils";
+import ArticleSearch from "./articlesearch";
 
 const ArticleList = ()=> {
 
@@ -24,6 +25,7 @@ const ArticleList = ()=> {
     if (isLoading) return <p>Loading...</p>
     return (
         <section>
+            <ArticleSearch />
         <h2>Top Stories</h2>
         <ul className ="article-list">
         {

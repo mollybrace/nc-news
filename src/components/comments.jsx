@@ -20,7 +20,7 @@ if (isLoading) return <p>Loading...</p>
 
 return (
     <section>
-        <AddComment article_id={article_id} />
+        <AddComment article_id={article_id} setComments={setComments} />
         <h2>Comments</h2>
         <ul className="comments-list">
             {
@@ -28,9 +28,8 @@ return (
                     return (
                         <li key={comment.comment_id}>
                             <h1>{comment.body}</h1>
-                            <button>
-                            <h1>{comment.votes}</h1>
-                            </button> 
+                            <h6>{comment.username}</h6>
+                            <h1>Votes: {comment.votes}</h1>
 
                         </li>
                     )

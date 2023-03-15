@@ -1,24 +1,31 @@
 import { useState } from "react"
 import { postComment } from "../utils/utils";
+import UserComment from "./usercomment";
 
-const AddComment = ({article_id}) => {
+const AddComment = ({article_id, setComments}) => {
 
     const [body, setCommentBody] = useState("")
     const [username, setUsername] = useState("")
+    const [newComment, setNewComment] = useState("")
     
 
 
     const handleClick = (event) => {
         event.preventDefault()
         const commentObject = {body, username}
-        console.log(commentObject)
         postComment(article_id, commentObject).then((commentPosted) => {
-            console.log(commentObject)
+            console.log(commentPosted[0].comment_id, "new comment")
+            setComments((currComments) => {
+                return [commentPosted[0], ...currComments]
+            })
         })
     }
     return (
+        <section>
+
         <form>
             <p> Add comment: </p>
+            <label htmlFor="body">Comment:</label>
             <input 
             type="text"
             placeholder="comment here..."
@@ -26,6 +33,7 @@ const AddComment = ({article_id}) => {
             onChange={(event) => {setCommentBody(event.target.value)}}
             >
             </input>
+            <label htmlFor="username">Username:</label>
             <input
             type="text"
             placeholder="username here..."
@@ -33,9 +41,8 @@ const AddComment = ({article_id}) => {
             onChange={(event) => {setUsername(event.target.value)}}>
             </input>
             <button type="submit" onClick={handleClick}>Submit</button>
-            
-           
         </form>
+            </section>
     )
 }
 
