@@ -9,7 +9,10 @@ const ArticleElement =() => {
     const [article, setArticle] = useState([])
     const [votes, setVotes] = useState()
     const [isLoading, setIsLoading] = useState(true)
-    const [click, setClick] = useState(false)
+    const [upvoteText, setUpvoteText] = useState("Vote")
+    const [downvoteText, setDownvoteText] = useState("Downvote")
+    const [disableUpvote, setDisableUpvote] = useState(false)
+    const [disableDownvote, setDisableDownvote] = useState(false)
 
 const {article_id} = useParams()
 
@@ -22,10 +25,24 @@ useEffect(() => {
     })
 }, [article_id])
 
-const handleClick = () =>{
-    setVotes(votes + 1)
-    patchArticleVotes(article_id)
+const handleClick = () => {
+        const inc_votes = {inc_votes: 1}
+        setVotes(votes + 1)
+        setUpvoteText("Voted!")
+        setDisableUpvote(true)
+        patchArticleVotes(article_id, inc_votes).then((patchReceived) => {
+        })
+        }
+    
+const handleDownVote = () => {
+    const inc_votes = {inc_votes: -1}
+    setVotes(votes -1)
+    setDisableDownvote(true)
+    patchArticleVotes(article_id, inc_votes).then(() => {
+        setDownvoteText("Voted!")
+    })
 }
+  
 if (isLoading) return <p>Loading...</p>
 
 return (
@@ -37,10 +54,11 @@ return (
                     return (
                         <li key={article.article_id}>
                             <h3>{info.title}</h3>
-                            <img src={info.article_img_url} alt="Article image"></img>
+                            <img src={info.article_img_url} alt="Article"></img>
                             <p>{info.body}</p>
                             <p>Votes: {votes}</p>
-                            <button onClick={handleClick}>Vote</button>
+                            <button disabled={disableUpvote} onClick={handleClick}>{upvoteText}</button>
+                            <button disabled={disableDownvote} onClick={handleDownVote}>{downvoteText}</button>
                             <p>{info.author}</p>
                             <p>{info.created_at}</p>
                         </li>

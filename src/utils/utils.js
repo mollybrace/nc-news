@@ -21,8 +21,8 @@ return ncNews.get(`/api/articles/${article_id}/comments`).then((commentsReceived
 })
 }
 
-export const patchArticleVotes = (article_id) => {
-  return ncNews.patch(`/api/articles/${article_id}`, {inc_votes: 1}).then((patchReceived) => {
+export const patchArticleVotes = (article_id, inc_votes) => {
+  return ncNews.patch(`/api/articles/${article_id}`, inc_votes).then((patchReceived) => {
     return patchReceived
   })
 }
