@@ -20,7 +20,7 @@ if (isLoading) return <p>Loading...</p>
 
 return (
     <section>
-        <AddComment />
+        <AddComment article_id={article_id} />
         <h2>Comments</h2>
         <ul className="comments-list">
             {
