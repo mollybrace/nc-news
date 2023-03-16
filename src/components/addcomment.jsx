@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { postComment } from "../utils/utils";
-import UserComment from "./usercomment";
 
 const AddComment = ({article_id, setComments}) => {
 

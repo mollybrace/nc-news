@@ -4,8 +4,8 @@ const ncNews = axios.create({
   baseURL: "https://backend-project-1.onrender.com/",
 });
 
-export const fetchArticles = () => {
-  return ncNews.get("api/articles").then((articlesReceived) => {
+export const fetchArticles = (topicQuery) => {
+  return ncNews.get("api/articles", {params: {topic: topicQuery}}).then((articlesReceived) => {
     return articlesReceived.data.articles;
   });
 };

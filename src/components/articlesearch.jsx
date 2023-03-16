@@ -1,23 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import select from "react-select"
+import { useSearchParams, useParams } from "react-router-dom";
 
 const ArticleSearch = () => {
+    
+    const [topicSearchBy, setTopicSearchBy] = useState()
+    const [searchParams, setSearchParams] = useSearchParams();
+    
 
-    const optionList = [
-        {value: "hello", Label: "hello"}
-    ]
+    useEffect (() => {
+        setSearchParams(`topic=${topicSearchBy}`)
+        const newSearchParams = new URLSearchParams(useSearchParams)
 
+    },[topicSearchBy, searchParams])
 
-    const [topic, setTopic] = useState()
     return (
 
         <section>
-            <h1>Searh for article:</h1>
+            <label htmlFor="searchBy">Searh By Topic:</label>
                 <select
-                options={optionList}
                 placeholder="select topic"
-                value={topic}
-                >Choose topic</select>
+                value={topicSearchBy}
+                onChange={(event) =>{setTopicSearchBy(event.target.value)}}
+                >
+                <option value="football">football</option>
+                <option value="coding">coding</option>
+                <option value="cooking">cooking</option>
+                </select>
         </section>
     )
 }

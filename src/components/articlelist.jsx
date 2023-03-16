@@ -1,28 +1,31 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { fetchArticles } from "../utils/utils";
-import { fetchArticle } from "../utils/utils";
 import ArticleSearch from "./articlesearch";
 
 const ArticleList = ()=> {
 
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
-
+    const [searchParams, setSearchParams] = useSearchParams();
     const [articles, setArticles]= useState([])
-
+    
+    const topicQuery = searchParams.get('topic')
+    
     useEffect(() => {
-        fetchArticles().then((articlesReceived) => {
+        const newSearchParams = new URLSearchParams(useSearchParams)
+        console.log(topicQuery)
+        fetchArticles(topicQuery).then((articlesReceived) => {
             setIsLoading(true);
             setIsError(false);
             setArticles(articlesReceived)
             setIsLoading(false)
         })
-    })
-
-
+    }, [searchParams])
 
     if (isLoading) return <p>Loading...</p>
+
     return (
         <section>
             <ArticleSearch />
