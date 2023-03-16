@@ -6,32 +6,45 @@ const AddComment = ({article_id, setComments}) => {
     const [body, setCommentBody] = useState("")
     const [username, setUsername] = useState("")
     const [newComment, setNewComment] = useState("")
+    const [submit, setSubmit] = useState("Submit")
+    const [error, setError] = useState(false)
     
 
 
     const handleClick = (event) => {
         event.preventDefault()
+        if (!body) {setError(true)}
         const commentObject = {body, username}
+        setNewComment(commentObject)
+        setCommentBody("")
+        setUsername("")
+        setSubmit("Submitted!")
         postComment(article_id, commentObject).then((commentPosted) => {
             console.log(commentPosted[0].comment_id, "new comment")
             setComments((currComments) => {
                 return [commentPosted[0], ...currComments]
+                
             })
-        })
+        })  .catch((err) => {
+            setError(true);
+            });
     }
+
+
     return (
         <section>
 
         <form>
             <p> Add comment: </p>
             <label htmlFor="body">Comment:</label>
-            <input 
+            <textarea 
             type="text"
             placeholder="comment here..."
             value={body}
             onChange={(event) => {setCommentBody(event.target.value)}}
             >
-            </input>
+            </textarea>
+            <br></br>
             <label htmlFor="username">Username:</label>
             <input
             type="text"
@@ -39,7 +52,10 @@ const AddComment = ({article_id, setComments}) => {
             value={username}
             onChange={(event) => {setUsername(event.target.value)}}>
             </input>
-            <button type="submit" onClick={handleClick}>Submit</button>
+            <br></br>
+            <button type="submit" onClick={handleClick}>{submit}</button>
+            {error && <p> ERROR: Comment not submitted</p>}
+            {newComment && <p>Submitted succesfully!</p>}
         </form>
             </section>
     )

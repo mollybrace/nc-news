@@ -21,7 +21,7 @@ const ArticleList = ()=> {
             setIsError(false);
             setArticles(articlesReceived)
             setIsLoading(false)
-        })
+        }) 
     }, [searchParams])
 
     if (isLoading) return <p>Loading...</p>
