@@ -12,21 +12,21 @@ const ArticleList = ()=> {
     const [articles, setArticles]= useState([])
     
     const topicQuery = searchParams.get('topic')
-    const search_by = searchParams.get("sort_by")
-    const order_by = searchParams.get("order_by")
+    const sort_by = searchParams.get("sort_by")
+    const order = searchParams.get("order")
     
     
     useEffect(() => {
         const newSearchParams = new URLSearchParams(useSearchParams)
-        console.log(topicQuery, search_by, order_by)
-        fetchArticles(topicQuery, search_by, order_by).then((articlesReceived) => {
+        console.log(topicQuery, sort_by, order)
+        fetchArticles(topicQuery, sort_by, order).then((articlesReceived) => {
             console.log(articlesReceived)
             setIsLoading(true);
             setIsError(false);
             setArticles(articlesReceived)
             setIsLoading(false)
         }) 
-    }, [searchParams, topicQuery, search_by, order_by ])
+    }, [searchParams, topicQuery, sort_by, order ])
 
     if (isLoading) return <p>Loading...</p>
 

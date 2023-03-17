@@ -7,12 +7,12 @@ const ArticleSearch = () => {
     const [topicSearchBy, setTopicSearchBy] = useState("*")
     const [searchParams, setSearchParams] = useSearchParams();
     const [sortBy, setSortBy] = useState("created_at");
-    const [orderBy, setOrderBy] = useState("desc");
+    const [orderBy, setOrderBy] = useState("DESC");
     
 
      
     useEffect (() => {
-        setSearchParams(`?topic=${topicSearchBy}&sort_by=${sortBy}&order_by=${orderBy}`)
+        setSearchParams(`?topic=${topicSearchBy}&sort_by=${sortBy}&order=${orderBy}`)
         console.log(searchParams)
         const newSearchParams = new URLSearchParams(useSearchParams)
 
@@ -51,8 +51,8 @@ const ArticleSearch = () => {
             value={orderBy}
             onChange={(event) =>{setOrderBy(event.target.value)}}
             >
-                <option value="asc">Ascending</option>
-                <option value="desc">Descending</option>
+                <option value="ASC">Ascending</option>
+                <option value="DESC">Descending</option>
             </select>
         </section>
     )
