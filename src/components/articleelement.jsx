@@ -50,7 +50,6 @@ if (isLoading) return <p>Loading...</p>
 
 return (
     <section>
-        <h2> this is the element </h2>
         <ul className="article-info">
             {
                 article.map((info) => {
@@ -60,8 +59,9 @@ return (
                             <img src={info.article_img_url} alt="Article"></img>
                             <p>{info.body}</p>
                             <p>Votes: {votes}</p>
-                            <button disabled={disableUpvote} onClick={handleClick}>{upvoteText}</button>
-                            <button disabled={disableDownvote} onClick={handleDownVote}>{downvoteText}</button>
+                            <button className="vote-button" disabled={disableUpvote} onClick={handleClick}>{upvoteText}</button>
+                            <br></br>
+                            <button className="vote-button" disabled={disableDownvote} onClick={handleDownVote}>{downvoteText}</button>
                             <p>{info.author}</p>
                             <p>{info.created_at}</p>
                         </li>
