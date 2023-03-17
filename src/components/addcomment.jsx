@@ -22,11 +22,12 @@ const AddComment = ({article_id, setComments}) => {
         postComment(article_id, commentObject).then((commentPosted) => {
             console.log(commentPosted[0].comment_id, "new comment")
             setComments((currComments) => {
+                setError(false)
                 return [commentPosted[0], ...currComments]
-                
             })
         })  .catch((err) => {
             setError(true);
+            return <p>ERROR!</p>
             });
     }
 
@@ -53,9 +54,9 @@ const AddComment = ({article_id, setComments}) => {
             onChange={(event) => {setUsername(event.target.value)}}>
             </input>
             <br></br>
-            <button type="submit" onClick={handleClick}>{submit}</button>
+            <button type="submit" onClick={handleClick}>Submit</button>
             {error && <p> ERROR: Comment not submitted</p>}
-            {newComment && <p>Submitted succesfully!</p>}
+            {newComment && !error && <p>Submitted succesfully!</p>}
         </form>
             </section>
     )
