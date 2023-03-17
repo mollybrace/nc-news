@@ -3,7 +3,8 @@ const ErrorPage = () => {
 
     return (
         <section>
-            <p>this is an error page!!</p>
+            <p>ERROR!!</p>
+            <p>Head back to the homepage here: </p>
         </section>
     )
 }

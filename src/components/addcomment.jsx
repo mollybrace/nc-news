@@ -20,7 +20,6 @@ const AddComment = ({article_id, setComments}) => {
         setUsername("")
         setSubmit("Submitted!")
         postComment(article_id, commentObject).then((commentPosted) => {
-            console.log(commentPosted[0].comment_id, "new comment")
             setComments((currComments) => {
                 setError(false)
                 return [commentPosted[0], ...currComments]

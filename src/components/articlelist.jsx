@@ -29,6 +29,7 @@ const ArticleList = ()=> {
     }, [searchParams, topicQuery, sort_by, order ])
 
     if (isLoading) return <p>Loading...</p>
+    if (isError) return <p>ERROR!</p>
 
     return (
         <section>
@@ -41,7 +42,7 @@ const ArticleList = ()=> {
                     <li key={article.article_id} className="article-element">
                         <h3 className="article-title">{article.title}</h3>
                         <Link to={`/articles/${article.article_id}`}>
-                        <img width="500px" src={article.article_img_url} alt="Article image"></img>
+                        <img width="500px" src={article.article_img_url} alt="Article preview"></img>
                         </Link>
                     </li>
                 )

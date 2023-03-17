@@ -64,6 +64,8 @@ return (
                             <button className="vote-button" disabled={disableDownvote} onClick={handleDownVote}>{downvoteText}</button>
                             <p>{info.author}</p>
                             <p>{info.created_at}</p>
+                            {voteError && <p> ERROR: Vote again...</p>}
+
                         </li>
                     
                         )

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/header';
 import ArticleList from "./components/articlelist"
@@ -10,11 +9,11 @@ function App() {
 
     return (
     <div className="App">
-     <Header />
+     <Link to="/" Header />
      <Routes>
-     <Route path="/" element={<ArticleList />} />
+     <Route path="/articles/" element={<ArticleList />} />
      <Route path="/articles/:article_id" element={<ArticleElement />} />
-     <Route path="*" element={ErrorPage} />
+     <Route path="/*" element={<ErrorPage />} />
      </Routes>
     </div>
   )

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import select from "react-select"
-import { useSearchParams, useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const ArticleSearch = () => {
     
@@ -15,8 +14,8 @@ const ArticleSearch = () => {
         setSearchParams(`?topic=${topicSearchBy}&sort_by=${sortBy}&order=${orderBy}`)
         console.log(searchParams)
         const newSearchParams = new URLSearchParams(useSearchParams)
-
-    },[topicSearchBy, sortBy, orderBy, searchParams])
+        console.log(newSearchParams)
+    },[topicSearchBy, sortBy, orderBy, searchParams, setSearchParams])
 
     return (
 
