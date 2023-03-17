@@ -33,13 +33,13 @@ const ArticleList = ()=> {
     return (
         <section>
             <ArticleSearch />
-        <h2>Top Stories</h2>
+        <h2 className="article-title">Top Stories</h2>
         <ul className ="article-list">
         {
             articles.map((article) => {
                 return (
                     <li key={article.article_id} className="article-element">
-                        <h3>{article.title}</h3>
+                        <h3 className="article-title">{article.title}</h3>
                         <Link to={`/articles/${article.article_id}`}>
                         <img width="500px" src={article.article_img_url} alt="Article image"></img>
                         </Link>

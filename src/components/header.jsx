@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <section>
+        <section className="header">
             <h1>Northcoders News Desk</h1>
         </section>
     )

@@ -20,9 +20,11 @@ const ArticleSearch = () => {
 
     return (
 
-        <section>
+        <section className="search-function">
             <label htmlFor="searchBy">Searh By Topic:</label>
+                <br></br>
                 <select
+                className="search-option"
                 placeholder="select topic"
                 value={topicSearchBy}
                 onChange={(event) =>{setTopicSearchBy(event.target.value)}}
@@ -33,7 +35,9 @@ const ArticleSearch = () => {
                 </select>
             <br></br>
             <label htmlFor="SortBy">Sort By:</label>
+            <br></br>
             <select
+            className="search-option"
             placeholder="select sort by"
             value={sortBy}
             onChange={(event) =>{setSortBy(event.target.value)}}
@@ -46,7 +50,9 @@ const ArticleSearch = () => {
             </select>
             <br></br>
             <label htmlFor="orderBy">Order By:</label>
+            <br></br>
             <select
+            className="search-option"
             placeholder="Order"
             value={orderBy}
             onChange={(event) =>{setOrderBy(event.target.value)}}
