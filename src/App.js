@@ -9,9 +9,9 @@ function App() {
 
     return (
     <div className="App">
-     <Link to="/" Header />
+     <Header />
      <Routes>
-     <Route path="/articles/" element={<ArticleList />} />
+     <Route path="/" element={<ArticleList />} />
      <Route path="/articles/:article_id" element={<ArticleElement />} />
      <Route path="/*" element={<ErrorPage />} />
      </Routes>
