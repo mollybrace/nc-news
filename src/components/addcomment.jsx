@@ -53,7 +53,7 @@ const AddComment = ({article_id, setComments}) => {
             onChange={(event) => {setUsername(event.target.value)}}>
             </input>
             <br></br>
-            <button class="comment-button" type="submit" onClick={handleClick}>Submit</button>
+            <button className="comment-button" type="submit" onClick={handleClick}>Submit</button>
             {error && <p> ERROR: Comment not submitted</p>}
             {newComment && !error && <p>{submit}</p>}
         </form>
