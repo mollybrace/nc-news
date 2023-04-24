@@ -24,7 +24,7 @@ const AddComment = ({article_id, setComments}) => {
                 setError(false)
                 return [commentPosted[0], ...currComments]
             })
-        })  .catch((err) => {
+        }).catch((err) => {
             setError(true);
             return <p>ERROR!</p>
             });
@@ -55,7 +55,7 @@ const AddComment = ({article_id, setComments}) => {
             <br></br>
             <button class="comment-button" type="submit" onClick={handleClick}>Submit</button>
             {error && <p> ERROR: Comment not submitted</p>}
-            {newComment && !error && <p>Submitted succesfully!</p>}
+            {newComment && !error && <p>{submit}</p>}
         </form>
             </section>
     )

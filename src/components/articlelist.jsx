@@ -16,9 +16,10 @@ const ArticleList = ()=> {
     const order = searchParams.get("order")
     
     
-    useEffect(() => {
+    useEffect((event) => {
+        event.preventDefault()
         const newSearchParams = new URLSearchParams(useSearchParams)
-        console.log(topicQuery, sort_by, order)
+        console.log(topicQuery, sort_by, order, searchParams)
         fetchArticles(topicQuery, sort_by, order).then((articlesReceived) => {
             console.log(articlesReceived)
             setIsLoading(true);
