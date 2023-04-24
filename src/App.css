@@ -5,20 +5,26 @@
 
 .App {
   text-align: center;
-  background-color: #1F363D;
-  color: #CFE0C3;
+  background-color: #fffcf7;
+  color: #738290;
   font-family: Arial, Helvetica, sans-serif
 }
 .header {
-  background-color: #1F363D;
+  background-color: #a1b5d8;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 70px;
-  color: #CFE0C3;
+  color: #fffcf7;
+  cursor: pointer;
 } 
+
+.article-heading {
+    text-decoration: underline;
+    font-size: 50px;
+}
 
 .article-element {
   display: inline-block;
@@ -35,14 +41,20 @@
   color: black;
 }
 
+.article-image {
+  justify-content: center;
+}
+
 .vote-button {
   background-color: #CFE0C3; 
   border: black;
+  border-radius: 5px;
   color: #1F363D;
-  padding: 15px 32px;
+  padding: 15px 15px;
+  margin: 5px;
+  display: inline-block;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
 }
 
@@ -56,7 +68,46 @@
 }
 
 .search-function {
-  padding-bottom: 1cm;
+  padding: 5px;
+  margin: 40px;
 }
 
+.article-header {
+  font-size: 40px;
+}
 
+input {
+  width: 90%;
+  border-style: solid;
+  border-color: #738290;
+}
+
+textarea {
+  width: 90%;
+  border-style: solid;
+  border-color: #738290;
+}
+
+.comment-button {
+  background-color: #CFE0C3; 
+  border: black;
+  border-radius: 5px;
+  color: #1F363D;
+  padding: 15px 15px;
+  margin: 20px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.comments-list {
+  margin: 40px;
+  padding: 20px;
+  text-align: left;
+}
+
+.heart {
+  text-align: right;
+  color: red
+}

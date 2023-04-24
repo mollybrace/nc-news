@@ -34,7 +34,7 @@ const ArticleList = ()=> {
     return (
         <section>
             <ArticleSearch />
-        <h2 className="article-title">Top Stories</h2>
+        <h2 className="article-heading">Top Stories</h2>
         <ul className ="article-list">
         {
             articles.map((article) => {

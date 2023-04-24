@@ -29,7 +29,7 @@ return (
                         <li key={comment.comment_id}>
                             <h1>{comment.body}</h1>
                             <h6>{comment.username}</h6>
-                            <h1>Votes: {comment.votes}</h1>
+                            <h1 className="heart">♥  {comment.votes}</h1>
 
                         </li>
                     )

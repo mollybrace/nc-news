@@ -55,10 +55,10 @@ return (
                 article.map((info) => {
                     return (
                         <li key={article.article_id}>
-                            <h3>{info.title}</h3>
-                            <img src={info.article_img_url} alt="Article"></img>
+                            <h3 className="article-header">{info.title}</h3>
+                            <img className="article-image" src={info.article_img_url} alt="Article preview"></img>
                             <p>{info.body}</p>
-                            <p>Votes: {votes}</p>
+                            <p> ♥ {votes}</p>
                             <button className="vote-button" disabled={disableUpvote} onClick={handleClick}>{upvoteText}</button>
                             <br></br>
                             <button className="vote-button" disabled={disableDownvote} onClick={handleDownVote}>{downvoteText}</button>
