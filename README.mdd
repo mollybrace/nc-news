@@ -1,0 +1,46 @@
+Welcome to Northcoders News Desk.
+
+Description
+This is a full-stack CRUD application that serves as a news site. Users can read and comment on news articles. The application allows users to filter articles by topic and sort them by multiple criteria, with the option to order results in ascending or descending order.
+
+Features
+CRUD Functionality.
+Filter by Topic: Users can filter news articles by specific topics.
+Sorting: Articles can be sorted by various criteria (e.g., date, author, popularity) and ordered in ascending or descending order.
+Users can comment on articles, upvote and downvote.
+
+Technologies Used
+Frontend: React, HTML, CSS
+Backend: Node.js, Express
+Database: PostgreSQL
+
+Usage
+To view articles, visit the homepage.
+Use the filter dropdown to filter articles by topic.
+Use the sorting feature to order articles by different criteria.
+Perform CRUD operations (create, update, delete) via the interface.
+
+Known Issues
+Initial API Request: The initial API request to load the homepage can be slow. Optimizing database queries or implementing caching could improve performance.
+
+API Endpoints
+GET /api/articles: Fetch all articles.
+GET /api/topics: Fetch all topics.
+GET /api/users: Fetch all users.
+GET /api/articles/
+: Fetch a specific article by its ID.
+GET /api/articles/
+/comments: Fetch comments for a specific article.
+POST /api/articles/
+/comments: Add a comment to a specific article.
+DELETE /api/comments/
+: Delete a comment by its ID.
+PATCH /api/articles/
+: Update an article (e.g., for upvoting/downvoting or editing content).
+
+
+Please find the backend here: 
+https://github.com/mollybrace/backend-project
+
+Credits
+Special thanks to instructors, resources, and tutorials that guided this project.
