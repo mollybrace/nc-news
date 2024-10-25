@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+Welcome to Northcoders News Desk.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Overview
+For my individual project of my software development bootcamp I was tasked with creating a full stack CRUD application. Users can filter articles by topic, sort them by multiple criteria and comment on news articles.
 
-## Available Scripts
+Features
+CRUD Functionality.
+Filter by Topic: Users can filter news articles by specific topics.
+Sorting: Articles can be sorted by various criteria (e.g., date, author, popularity) and ordered in ascending or descending order.
+Users can comment on articles, upvote and downvote.
 
-In the project directory, you can run:
+Running the project 
+npm run dev
 
-### `npm start`
+Technologies Used
+Frontend: React, HTML, CSS
+Backend: Node.js, Express
+Database: PostgreSQL
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Usage
+To view articles, visit the homepage.
+Use the filter dropdown to filter articles by topic.
+Use the sorting feature to order articles by different criteria.
+Perform CRUD operations (create, update, delete) via the interface.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Known Issues
+Initial API Request: The initial API request to load the homepage can be slow. 
 
-### `npm test`
+API Endpoints
+GET /api/articles: Fetch all articles.
+GET /api/topics: Fetch all topics.
+GET /api/users: Fetch all users.
+GET /api/articles/
+: Fetch a specific article by its ID.
+GET /api/articles/
+/comments: Fetch comments for a specific article.
+POST /api/articles/
+/comments: Add a comment to a specific article.
+DELETE /api/comments/
+: Delete a comment by its ID.
+PATCH /api/articles/
+: Update an article (e.g., for upvoting/downvoting or editing content).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please find the backend here: 
+https://github.com/mollybrace/backend-project
