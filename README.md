@@ -1,32 +1,34 @@
-Welcome to Northcoders News Desk.
+# Welcome to Northcoders News Desk.
 
-Overview
-For my individual project of my software development bootcamp I was tasked with creating a full stack CRUD application. Users can filter articles by topic, sort them by multiple criteria and comment on news articles.
+## Overview:
+For my individual project of my software development boot camp I was tasked with creating a full stack CRUD application. The back end isUsers can filter articles by topic, sort them by multiple criteria and comment on news articles.
 
-Features
+## Features
 CRUD Functionality.
 Filter by Topic: Users can filter news articles by specific topics.
 Sorting: Articles can be sorted by various criteria (e.g., date, author, popularity) and ordered in ascending or descending order.
 Users can comment on articles, upvote and downvote.
 
-Running the project 
+## Running the project 
 npm run dev
 
-Technologies Used
+## Technologies Used
 Frontend: React, HTML, CSS
-Backend: Node.js, Express
-Database: PostgreSQL
+Backend: Node.js, Express, PostgreSQL
 
-Usage
+## Dependencies
+
+## Usage
 To view articles, visit the homepage.
 Use the filter dropdown to filter articles by topic.
 Use the sorting feature to order articles by different criteria.
-Perform CRUD operations (create, update, delete) via the interface.
+Click onto specific articles
+Comment, upvote and downvote articles.
 
-Known Issues
+## Known Issues
 Initial API Request: The initial API request to load the homepage can be slow. 
 
-API Endpoints
+## API Endpoints
 GET /api/articles: Fetch all articles.
 GET /api/topics: Fetch all topics.
 GET /api/users: Fetch all users.
@@ -42,5 +44,5 @@ PATCH /api/articles/
 : Update an article (e.g., for upvoting/downvoting or editing content).
 
 
-Please find the backend here: 
+## Please find the backend here: 
 https://github.com/mollybrace/backend-project
