@@ -12,11 +12,13 @@ Users can comment on articles, upvote and downvote.
 ## Running the project 
 npm run dev
 
+Create .env.development on the route
+PGDATABASE=<database_name_here>
+
 ## Technologies Used
 Frontend: React, HTML, CSS
 Backend: Node.js, Express, PostgreSQL
 
-## Dependencies
 
 ## Usage
 To view articles, visit the homepage.
