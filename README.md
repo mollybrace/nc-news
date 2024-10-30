@@ -10,7 +10,9 @@ Sorting: Articles can be sorted by various criteria (e.g., date, author, popular
 Users can comment on articles, upvote and downvote.
 
 ## Running the project 
-npm run dev
+npm install 
+npm start
+
 
 Create .env.development on the route
 PGDATABASE=<database_name_here>
