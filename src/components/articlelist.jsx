@@ -10,7 +10,7 @@ const ArticleList = ()=> {
     const [isError, setIsError] = useState(false);
     const [articles, setArticles]= useState([])
     
-    const searchParams = useSearchParams();
+    const [searchParams] = useSearchParams();
     const topicQuery = searchParams.get('topic')
     const sort_by = searchParams.get("sort_by")
     const order = searchParams.get("order")
