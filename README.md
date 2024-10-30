@@ -14,9 +14,6 @@ npm install
 npm start
 
 
-Create .env.development on the route
-PGDATABASE=<database_name_here>
-
 ## Technologies Used
 Frontend: React, HTML, CSS
 Backend: Node.js, Express, PostgreSQL
